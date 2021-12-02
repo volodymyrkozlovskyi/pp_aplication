@@ -23,7 +23,7 @@ jobs:
     
     - name: connect_to_server_and_apply_updates
       env:
-        PRIVATE_KEY: ${{ secrets.north_cali  }}
+        PRIVATE_KEY: ${{ secrets.SSH_KEY }}
         USER_NAME : ubuntu
       run: |
         grep  public_ip ./pebble_infrastructure/terraform.tfstate | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" > connection-ip
